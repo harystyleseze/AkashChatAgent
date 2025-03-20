@@ -31,7 +31,7 @@ AkashChat provides an intuitive platform for users to analyze behavioral pattern
 - **Frontend**: Next.js 15, React, TypeScript
 - **Styling**: Tailwind CSS with shadcn/ui components
 - **State Management**: React Hooks and Context API
-- **API Integration**: Akash AI API for behavioral analysis and chat
+- **API Integration**: Akash ChatAI
 - **Authentication**: Next.js middleware and server components
 - **Animations**: CSS transitions and Tailwind animations
 - **Icons**: Lucide React
@@ -56,7 +56,7 @@ cd AkashChatAgent
 2. Install dependencies
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 # or
 yarn
 ```
