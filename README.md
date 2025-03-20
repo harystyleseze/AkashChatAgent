@@ -1,12 +1,18 @@
 # AkashChat
 
+![Akash Chat Agent](/public/images/homepage.png)
+
 A modern AI-powered behavioral analysis chat application built on Next.js.
 
 ## Overview
 
 AkashChat provides an intuitive platform for users to analyze behavioral patterns, develop healthier habits, and receive evidence-based recommendations through an AI assistant. The application features both a public-facing interface and a secure dashboard with advanced analytics capabilities.
 
+![Chat Interface](/public/images/chat.png)
+
 ## Features
+
+![Key Features](/public/images/features.png)
 
 - **AI-Powered Chat Interface**: Engage in meaningful conversations with our behavioral analysis AI assistant
 - **Multi-Model Support**: Choose from a variety of AI models including DeepSeek-R1, Meta-Llama-3, and more
@@ -77,6 +83,8 @@ yarn dev
 
 AkashChat leverages the Akash AI API for behavioral analysis with these key features:
 
+![Supported Models](/public/images/models.png)
+
 - **Multiple AI Models**: Support for various models, with Meta-Llama-3-2-3B-Instruct as the default
 - **Smart Model Fallback**: Automatic switching to available models if selected model is unavailable
 - **Client-Side API Calls**: Hydration-safe API integration to prevent React hydration mismatches
@@ -98,12 +106,46 @@ Available models include:
 The secure dashboard area includes:
 
 - **Enhanced Chat**: Advanced chat interface with model selection and conversation history
+
+![Enhanced Chat Interface](/public/images/dashboardChat.png)
+
 - **New Analysis**: Submit detailed information about behaviors for comprehensive analysis
+
+![New Analyses Dashboard Page](/public/images/newAnalyses.png)
+
 - **Analyses**: View and manage previous behavioral analyses
+
+![Analyses Dashboard Page](/public/images/analyses.png)
+
 - **Habits**: Track personal habits and view recommended habits from analyses
+
+![Habit Tracker Dashboard Page](/public/images/habits.png)
+
+![Habit Calendar Dashboard Page](/public/images/habitCalendar.png)
+
+![Habit Completion Rate Dashboard Page](/public/images/habitCompletionRate.png)
+
 - **Statistics**: Visual representations of progress and behavioral patterns
+
+![Statistics Dashboard Page](/public/images/statistics.png)
+
 - **Profile**: Manage account details and preferences
+
+![Profile Dashboard Page](/public/images/profile.png)
+
 - **Settings**: Control application behavior and appearance
+
+![Settings Dashboard Page](/public/images/settings.png)
+
+## Benefits
+
+![Benefits](/public/images/benefits.png)
+
+![Testimonials](/public/images/testimonial.png)
+
+![Log in Page](/public/images/login.png)
+
+![Registration Page](/public/images/register.png)
 
 ## Project Structure
 
