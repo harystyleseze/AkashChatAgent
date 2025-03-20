@@ -9,20 +9,26 @@ AkashChat provides an intuitive platform for users to analyze behavioral pattern
 ## Features
 
 - **AI-Powered Chat Interface**: Engage in meaningful conversations with our behavioral analysis AI assistant
-- **Model Selection**: Choose from multiple AI models including DeepSeek and Meta-Llama for your interactions
-- **Behavioral Analysis**: Get personalized insights on behaviors and patterns
-- **Habit Formation**: Track habits, establish routines, and get recommendations
+- **Multi-Model Support**: Choose from a variety of AI models including DeepSeek-R1, Meta-Llama-3, and more
+- **Behavioral Analysis**: Submit detailed information about behaviors to receive comprehensive analysis reports
+- **Habit Formation**: Track habits, establish routines, and get personalized recommendations
 - **Progress Tracking**: Monitor your development through detailed statistics and visualizations
 - **Responsive Design**: Seamless experience across desktop, tablet, and mobile devices
+- **Dark/Light Mode**: Toggle between themes for comfortable viewing in any environment
+- **User Authentication**: Secure login system for accessing personalized dashboard features
+- **Interactive UI**: Modern, accessible interface with clean animations and transitions
+- **Client-Side Rendering**: Optimized for performance with proper hydration handling
+- **Error Handling**: Graceful recovery from API errors and model unavailability
 
 ## Tech Stack
 
 - **Frontend**: Next.js 15, React, TypeScript
-- **Styling**: Tailwind CSS with custom theming
-- **UI Components**: Custom components with shadcn/ui
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **State Management**: React Hooks and Context API
+- **API Integration**: Akash AI API for behavioral analysis and chat
+- **Authentication**: Next.js middleware and server components
+- **Animations**: CSS transitions and Tailwind animations
 - **Icons**: Lucide React
-- **Animations**: Tailwind animations and custom effects
-- **API Integration**: Akash AI API for behavioral analysis
 
 ## Getting Started
 
@@ -34,17 +40,17 @@ AkashChat provides an intuitive platform for users to analyze behavioral pattern
 
 ### Installation
 
-1. Clone the repository - for starter template
+1. Clone the repository
 
 ```bash
-git clone https://github.com/harystyleseze/akash-chat-agent-template
-cd akash-chat-agent-template
+git clone https://github.com/harystyleseze/AkashChatAgent
+cd AkashChatAgent
 ```
 
 2. Install dependencies
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 # or
 yarn
 ```
@@ -67,51 +73,92 @@ yarn dev
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## API & Model Configuration
+## AI Models and API Integration
 
-AkashChat uses the Akash AI API for behavioral analysis. The application includes the following features:
+AkashChat leverages the Akash AI API for behavioral analysis with these key features:
 
-- **Automatic Model Detection**: The app will automatically detect which models are available with your API key
-- **Fallback Handling**: If a selected model is unavailable, the app will automatically switch to an available model
-- **Response Formatting**: All AI responses are formatted for readability with proper headings and lists
+- **Multiple AI Models**: Support for various models, with Meta-Llama-3-2-3B-Instruct as the default
+- **Smart Model Fallback**: Automatic switching to available models if selected model is unavailable
+- **Client-Side API Calls**: Hydration-safe API integration to prevent React hydration mismatches
+- **Error Handling**: Comprehensive error detection and recovery with user-friendly error messages
+- **Response Cleaning**: Automatic formatting of responses for better readability
+- **Behavioral Analysis**: In-depth functional analysis based on behavioral science principles
 
-Common available models include:
+Available models include:
 
-- DeepSeek-R1
+- DeepSeek-R1 (optimized for reasoning tasks)
+- DeepSeek-R1-Distill-Llama-70B
 - Meta-Llama-3-1-8B-Instruct-FP8
-- DeepSeek-R1-Distill-Llama-8B
-- llama3-8b-instruct
+- Meta-Llama-3-2-3B-Instruct (default)
+- Meta-Llama-3-1-70B-Instruct
+- And more depending on API availability
+
+## Dashboard Features
+
+The secure dashboard area includes:
+
+- **Enhanced Chat**: Advanced chat interface with model selection and conversation history
+- **New Analysis**: Submit detailed information about behaviors for comprehensive analysis
+- **Analyses**: View and manage previous behavioral analyses
+- **Habits**: Track personal habits and view recommended habits from analyses
+- **Statistics**: Visual representations of progress and behavioral patterns
+- **Profile**: Manage account details and preferences
+- **Settings**: Control application behavior and appearance
 
 ## Project Structure
 
 ```
-akash-chat-agent-template/
+akash-chat-agent/
 ├── components/         # Reusable UI components
 │   ├── dashboard/      # Dashboard-specific components
 │   ├── landing/        # Landing page components
-│   └── ui/             # Core UI components
+│   └── ui/             # Core UI components based on shadcn/ui
 ├── app/                # App router pages
 │   ├── dashboard/      # Protected dashboard routes
+│   │   ├── analyses/   # Behavioral analysis management
+│   │   ├── chat/       # Enhanced dashboard chat
+│   │   ├── habits/     # Habit tracking features
+│   │   ├── new-analysis/ # Create new behavioral analysis
+│   │   ├── profile/    # User profile management
+│   │   ├── settings/   # Application settings
+│   │   └── statistics/ # Progress visualizations
 │   ├── chat/           # Public chat interface
 │   └── login/          # Authentication pages
 ├── lib/                # Utility functions and shared code
 │   └── akash-api.ts    # API client for Akash AI services
+├── hooks/              # Custom React hooks
 ├── public/             # Static assets
 └── styles/             # Global styles
 ```
 
-## Key Pages
+## Client-Side Rendering and Hydration
 
-- **Landing Page**: Introduction to AkashChat and its features
-- **Login**: User authentication interface
-- **Public Chat**: Basic chat functionality for users without accounts
-- **Dashboard**: Central hub for registered users
-  - Chat: Enhanced chat with personalized features
-  - Analyses: View previous behavior analyses
-  - Habits: Track and manage habit formation
-  - Statistics: Visualizations of your progress
-  - Profile: Account management
-  - Settings: Application preferences
+To prevent React hydration errors, AkashChat implements:
+
+- **Isomorphic Detection**: Server vs client-side rendering detection
+- **Safe State Initialization**: Client-side only state initialization for dates and random values
+- **Stable IDs**: Sequential ID generation for chat messages
+- **Minimal Server Rendering**: Server renders a minimal UI placeholder
+- **Window Detection**: Uses `typeof window` check to prevent API calls during server rendering
+
+## Behavioral Analysis Features
+
+Submit detailed information about behaviors for advanced analysis:
+
+- **Current Behavior**: Describe the behavior you want to analyze
+- **Context/Environment**: When and where the behavior occurs
+- **Immediate Consequences**: What happens right after the behavior
+- **Previous Attempts**: What you've tried before to change this behavior
+- **Emotional Context**: Feelings and thoughts associated with the behavior
+
+The analysis provides:
+
+- Functional behavioral assessment
+- Root cause identification
+- Practical habit recommendations
+- Implementation strategies
+- Scientific evidence for recommendations
+- Progress tracking guidance
 
 ## Development
 
@@ -133,6 +180,14 @@ yarn start
 
 ## Troubleshooting
 
+### Hydration Errors
+
+If you encounter hydration errors:
+
+- Ensure dates and random values are only generated client-side
+- Use isomorphic detection with `typeof window` checks
+- Initialize state in useEffect with empty default values
+
 ### API Key Issues
 
 - If you're getting 401 errors, ensure your API key is correctly set in the `.env.local` file
@@ -141,16 +196,19 @@ yarn start
 ### Model Selection
 
 - If a particular model isn't working, try a different one from the dropdown
-- DeepSeek-R1 is generally more widely available with most API keys
+- Meta-Llama-3-2-3B-Instruct is set as the default model
+- The application will automatically suggest a working model if the selected one is unavailable
 
 ## Design Principles
 
-AkashChat follows a modern, minimalist design approach with:
+AkashChat follows modern design principles:
 
-- **Responsive layout**: Adapts seamlessly to any device size
-- **Accessibility**: Follows WCAG guidelines for inclusive user experience
-- **Consistent theming**: Teal-based color scheme with light/dark mode support
+- **Responsive layout**: Adapts to any device size from mobile to desktop
+- **Accessibility**: WCAG guidelines for inclusive user experience
+- **Consistent theming**: Primary color scheme with light/dark mode support
 - **Visual hierarchy**: Clear organization of information for intuitive navigation
+- **Minimal loading states**: Smooth transitions between application states
+- **Error feedback**: Clear communication when things go wrong
 
 ## Contributing
 
@@ -168,6 +226,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- The Next.js team for the incredible framework
+- Next.js team for the incredible framework
 - shadcn/ui for the beautiful component library foundation
+- Akash Network for their AI API services
 - Lucide for the elegant icon set
