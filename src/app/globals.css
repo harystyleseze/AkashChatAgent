@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@layer utilities {
+  .animate-gradient-slow {
+    animation: gradient-shift 12s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+}
+
+@layer base {
+  :root {
+    /* Refined teal-based color scheme inspired by AkashChat brand */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Slightly more vibrant teal as primary */
+    --primary: 176 84% 32%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Lighter teal with more saturation for accent */
+    --accent: 176 70% 94%;
+    --accent-foreground: 176 84% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    /* Match primary for consistent ring focus */
+    --ring: 176 84% 32%;
+
+    /* Chart colors with better contrast */
+    --chart-1: 176 84% 32%;
+    --chart-2: 196 80% 45%;
+    --chart-3: 154 70% 40%;
+    --chart-4: 215 70% 50%;
+    --chart-5: 262 60% 60%;
+
+    /* Sidebar colors */
+    --sidebar-background: 176 84% 32%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 176 84% 32%;
+    --sidebar-accent: 180 40% 96%;
+    --sidebar-accent-foreground: 176 84% 32%;
+    --sidebar-border: 180 15% 28%;
+    --sidebar-ring: 180 70% 76%;
+
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* More saturated teal for dark mode */
+    --primary: 176 76% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Darker, richer teal accent for dark mode */
+    --accent: 176 50% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 176 76% 46%;
+
+    /* Chart colors with better dark mode contrast */
+    --chart-1: 176 76% 46%;
+    --chart-2: 196 70% 50%;
+    --chart-3: 154 60% 45%;
+    --chart-4: 215 60% 55%;
+    --chart-5: 262 50% 65%;
+
+    /* Sidebar dark mode */
+    --sidebar-background: 222.2 47.4% 11.2%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 176 76% 46%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 176 30% 24%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 176 76% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
